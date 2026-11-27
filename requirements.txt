@@ -1,9 +1,3 @@
-django
-psycopg2
-dj-database-url
-gunicorn
-whitenoise
-django-heroku
-pytz
-sqlparse
+Django>=5.2,<5.3
+psycopg2-binary
 pyyaml

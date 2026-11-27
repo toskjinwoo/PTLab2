@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Спасибо за покупку</title>
+</head>
+<body>
+    <div>
+        <h3>Спасибо за покупку, {{ purchase.customer.name }}!</h3>
+        <p>Товар: {{ purchase.product.name }}</p>
+        <p>Цена: {{ purchase.product.price }} руб.</p>
+        <p>Ваша скидка: {{ purchase.discount_percent }}%</p>
+        <p>К оплате: <b>{{ purchase.price_paid }} руб.</b></p>
+        <p>Всего вы потратили: {{ purchase.customer.total_spent }} руб.
+           Ваша скидка на следующую покупку:
+           {{ purchase.customer.discount_percent }}%</p>
+        <p><a href="{% url 'index' %}">Вернуться в магазин</a></p>
+    </div>
+</body>
+</html>

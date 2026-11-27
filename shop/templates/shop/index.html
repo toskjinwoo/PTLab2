@@ -1,26 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
-    <title>Товары</title>
+    <title>Бытовая техника</title>
 </head>
 <body>
     <div>
-        <h3>Список</h3>
+        <h3>Магазин бытовой техники</h3>
         <table>
             <tr>
                 <td><p>Наименование</p></td>
-                <td><p>Цена</p></td>
+                <td><p>Цена, руб.</p></td>
                 <td></td>
             </tr>
             {% for p in products %}
                 <tr>
                     <td><p>{{ p.name }}</p></td>
                     <td><p>{{ p.price }}</p></td>
-                    <td><p><a href="/buy/{{ p.id }}">Купить</a></p></td>
+                    <td><p><a href="{% url 'buy' p.id %}">Купить</a></p></td>
                 </tr>
             {% endfor %}
         </table>
+
+        <h4>Накопительная скидка</h4>
+        <p>Скидка зависит от общей суммы ваших прошлых покупок:</p>
+        <ul>
+            {% for threshold, percent in tiers %}
+                <li>от {{ threshold }} руб. &mdash; {{ percent }}%</li>
+            {% endfor %}
+        </ul>
+        <p><a href="{% url 'customers' %}">Наши покупатели</a></p>
     </div>
 </body>
 </html>

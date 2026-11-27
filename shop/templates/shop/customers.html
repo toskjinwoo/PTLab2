@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>Покупатели</title>
+</head>
+<body>
+    <div>
+        <h3>Покупатели</h3>
+        <table>
+            <tr>
+                <td><p>Имя</p></td>
+                <td><p>Потрачено, руб.</p></td>
+                <td><p>Текущая скидка</p></td>
+            </tr>
+            {% for c in customers %}
+                <tr>
+                    <td><p>{{ c.name }}</p></td>
+                    <td><p>{{ c.total_spent }}</p></td>
+                    <td><p>{{ c.discount_percent }}%</p></td>
+                </tr>
+            {% empty %}
+                <tr><td colspan="3"><p>Покупателей пока нет</p></td></tr>
+            {% endfor %}
+        </table>
+        <p><a href="{% url 'index' %}">Назад к списку</a></p>
+    </div>
+</body>
+</html>

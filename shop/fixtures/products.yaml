@@ -1,15 +1,30 @@
 - model: shop.product
   pk: 1
   fields:
-    name: Стол
-    price: 2000
+    name: Холодильник
+    price: 45000
 - model: shop.product
   pk: 2
   fields:
-    name: Стул
-    price: 1000
+    name: Стиральная машина
+    price: 32000
 - model: shop.product
   pk: 3
   fields:
-    name: Табурет
-    price: 500
+    name: Посудомоечная машина
+    price: 38000
+- model: shop.product
+  pk: 4
+  fields:
+    name: Микроволновая печь
+    price: 7500
+- model: shop.product
+  pk: 5
+  fields:
+    name: Пылесос
+    price: 12000
+- model: shop.product
+  pk: 6
+  fields:
+    name: Электрочайник
+    price: 2500
